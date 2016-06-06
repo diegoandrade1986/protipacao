@@ -80,7 +80,7 @@ else
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><i class="fa fa-home" aria-hidden="true"></i>  Fatec Administrativo</a>
+            <a class="navbar-brand" href="index.php"><i class="fa fa-home" aria-hidden="true"></i> SRNotícias Administrativo</a>
         </div>
         <!-- /.navbar-header -->
 

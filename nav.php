@@ -4,7 +4,7 @@
 	<div class="col-sm-12">
 		<nav id="menuHeader" class="nav navbar navAlt" role="navigation">
 			<!-- Inicio Cabeçalho Menu Navegação !-->
-			<!-- Botão para Viewport menores !-->
+            <!-- Botão para Viewport menores !-->
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>

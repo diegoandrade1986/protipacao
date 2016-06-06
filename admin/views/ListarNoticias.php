@@ -85,7 +85,7 @@ $dadosNoticia = $noticiaService->fetchByCategoria($dadosCategoria->categoria_id)
             }
             ?>
             </form>
-            <div class="col-lg-12 pagination">
+            <div class="col-lg-12 btn btn-block">
                 <?php
                 $links = $pager->getLinks(); // PEGANDO TODOS OS LINKS
                 echo $links['all']; // MOSTRANDO OS LINKS, PAGINACAO
