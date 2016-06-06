@@ -2,6 +2,8 @@
 require_once __DIR__."/../Entity/Noticia.php";
 require_once __DIR__."/../Mapper/NoticiaMapper.php";
 require_once __DIR__."/UploadImage.php";
+require_once __DIR__."/../../../libs/Pager-2.4.9/Pager.php";
+require_once __DIR__."/../../../libs/Pager-2.4.9/Pager/Jumping.php";
 
 class NoticiaService
 {
@@ -14,7 +16,7 @@ class NoticiaService
         $this->noticiaMapper = $noticiaMapper;
     }
 
-    public function fetchByName($nome)
+/*    public function fetchByName($nome)
     {
         if (trim($nome) != "") {
             $this->categoria->setCategoriaNome($nome);
@@ -22,7 +24,7 @@ class NoticiaService
         }
         return false;
 
-    }
+    }*/
 
     public function fetch($id){
         if ((int)$id > 0){
@@ -35,7 +37,7 @@ class NoticiaService
 
     public function fetchAll()
     {
-        return $this->categoriaMapper->fetchAll();
+        return $this->noticiaMapper->fetchAll();
     }
 
     public function insert(array $dados)
@@ -90,14 +92,6 @@ class NoticiaService
         return UploadImage::imagePrincipal($name,$tempName,$dir);
     }
 
-    public function fetchByCategoria($categoriaid)
-    {
-        if ((int)$categoriaid > 0){
-            $this->noticia->setCategoriaId($categoriaid);
-            return $this->noticiaMapper->fetchByCategoria($this->noticia);
-        }
-    }
-
     public function delete($id)
     {
         if ((int) $id > 0){
@@ -116,5 +110,54 @@ class NoticiaService
         return json_encode([
             'success' => false
         ]);
+    }
+
+    public function fetchByCategoria($id)
+    {
+        if ((int) $id > 0) {
+            $this->noticia->setCategoriaId($id);
+            return $this->noticiaMapper->fetchByCategoria($this->noticia);
+        }
+        return false;
+
+    }
+
+    public function fetchAllNoticia($categoriaid){
+        if ((int)$categoriaid > 0){
+            $this->noticia->setCategoriaId($categoriaid);
+            $dadosNoticia = $this->noticiaMapper->fetchByCategoria($this->noticia);
+            if ($dadosNoticia){
+                $params = array(
+                    "mode" => 'Jumping', // MODO DAS PÁGINAS
+                    "perPage" => 9, // REGISTROS POR PÁGINA
+                    "delta" =>5, // NUMOS DE LINKS
+                    'itemData' => $dadosNoticia
+                );
+                $pager = & Pager::factory($params); // faz a fabrica com o array - params
+                $data = $pager->getPageData(); //Contem todos os dados a consulta listar()
+                $links = $pager->getLinks(); // PEGANDO TODOS OS LINKS
+                return[
+                    "dados" => $data,
+                    "links" => $links
+                ];
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public function noticiaRelacionada($noticiaId,$categoriaId)
+    {
+        if ((int) $noticiaId > 0 && (int) $categoriaId > 0){
+            $this->noticia->setNoticiaId($noticiaId);
+            $this->noticia->setCategoriaId($categoriaId);
+            return $this->noticiaMapper->noticiaRelacionada($this->noticia);
+        }
+        return false;
+    }
+
+    public function limitaString($string,$qtd)
+    {
+        return substr(strip_tags($string),0,$qtd);
     }
 }

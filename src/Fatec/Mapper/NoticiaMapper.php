@@ -90,7 +90,7 @@ class NoticiaMapper
             $result = $this->conexao->prepare("SELECT * FROM tb_noticia WHERE noticia_id = :id");
             $result->bindValue(":id", $noticia->getNoticiaId(), PDO::PARAM_INT);
             $result->execute();
-            return $result->fetch(PDO::FETCH_ASSOC);
+            return $result->fetch(PDO::FETCH_OBJ);
         }catch(PDOException $e){
             echo "Erro ao listar Noticia " . $e->getMessage();
             return false;
@@ -123,6 +123,21 @@ class NoticiaMapper
             return false;
         }catch(PDOException $e){
             echo "Erro ao deletar noticia  " . $e->getMessage();
+            return false;
+        }
+
+    }
+
+    public function noticiaRelacionada(Noticia $noticia)
+    {
+        try {
+            $result = $this->conexao->prepare("SELECT * FROM tb_noticia WHERE categoria_id = :id and noticia_id != :nid ORDER BY RANDOM() limit 3  ");
+            $result->bindValue(":id", $noticia->getCategoriaId(), PDO::PARAM_INT);
+            $result->bindValue(":nid", $noticia->getNoticiaId(), PDO::PARAM_INT);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_OBJ);
+        }catch(PDOException $e){
+            echo "Erro ao listar noticias relacionadas " . $e->getMessage();
             return false;
         }
 

@@ -71,7 +71,7 @@ $dadosNoticia = $noticiaService->fetchByCategoria($dadosCategoria->categoria_id)
             foreach ($data as $d) {
             ?>
                     <div class="form-group">
-                        <div class="col-md-offset-1 col-md-2"><img src='../<?php echo $d['thumbnail'] ?>' class="img-responsive"/></div>
+                        <div class="col-md-offset-1 col-md-2"><img src='../<?php echo $d['thumbnail'] ?>' alt='<?php echo $d['thumbnail'] ?>' class="img-responsive"/></div>
                         <div class="col-md-7"><?php echo $d['titulo'] ?> </div>
                         <div class="col-md-2">
                             <a href="index.php?pg=9&noticia=<?php echo $d['noticia_id']?>" class="btn btn-success btn-sm">Editar</a>
