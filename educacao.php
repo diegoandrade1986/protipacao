@@ -49,9 +49,10 @@ $noticia = $noticiaService->fetchAllNoticia($categoria->categoria_id);
                                                 <div class="entry-content">
                                                     <h6 class="entry-title"><a href="noticias.php?noticia=<?php echo $d['noticia_id'] ?>"><?php echo $d['titulo'] ?></a></h6>
                                                     <p><?php echo $noticiaService->limitaString($d['descricao'],250)   ?></p>
-                                                    <a class="more-link" href="noticias.php?noticia=<?php echo $d['noticia_id'] ?>">Saiba Mais</a>
+                                                    <a class="more-link btn btn-primary btn-sm" href="noticias.php?noticia=<?php echo $d['noticia_id'] ?>">Saiba Mais</a>
                                                 </div><!--entry-content-->
                                             </article><!--entry-item-->
+                                            <hr>
                                         </li>
                                         <?php } ?>
 
@@ -62,7 +63,11 @@ $noticia = $noticiaService->fetchAllNoticia($categoria->categoria_id);
                             </div><!--end:list-carousel-->
                         </section><!--featured-widget-->
                         <div class="row btn btn-block font-link">
-                            <?php echo $noticia['links']['all']?>
+                            <?php
+                            var_dump($noticia['links']['all']);
+                            echo $noticia['links']['all'];
+
+                            ?>
                         </div>
                     </div>
                     <!-- Fim ROW conteudo =============================================================================  !-->

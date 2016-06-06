@@ -9,7 +9,7 @@
 <?php
     include 'nav.php';
 ?>
-<div class="container-fluid">
+<div class="container">
 <div class="wrapper clearfix">
 	<div id="main-content">
     	<div id="main-content-inner">
