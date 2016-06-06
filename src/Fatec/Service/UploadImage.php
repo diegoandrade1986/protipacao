@@ -26,7 +26,8 @@ abstract class UploadImage
             $upDirThumb = __DIR__ . '/../../../img/noticia/' . $dir . '/thumb/' . $name;
             $fotos->saveToFile($upDir);
             if ($fotos->isValid()){
-                $redimensionar = $fotos->resize(180, 130, "fill");
+                //$redimensionar = $fotos->resize(180, 130, "fill");
+                $redimensionar = $fotos->resize(300, 200, "fill");
                 $redimensionar->saveToFile($upDirThumb);
                 if ($redimensionar->isValid()) {
                     return [
