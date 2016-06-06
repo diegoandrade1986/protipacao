@@ -1,0 +1,376 @@
+@charset "UTF-8";
+
+/* 
+	Nome: CSS 
+	Data: 
+    Descrição: Versão inicial. 
+	Versão: 0.1
+	Autor: Alexandre Senne
+	
+*/
+
+body{
+		background:#F5F5F5;
+		
+}
+
+
+article, section{
+		padding: 5px;
+		
+}
+
+.img-manchete{
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+}
+
+footer{
+    background-color:teal; /*#008B8B*/
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 20px;
+    border-radius: 3px;
+    color:white;
+    
+}
+
+}
+
+.conteudo-noticias{
+    border:2px solid lightgray;
+        
+}
+
+.etiqueta{
+    background-color: #A9A9A9;
+    padding: 5px;
+    border-radius: 3px;
+	
+}
+
+
+/* Configurando o Menu ---------- */
+
+.icon-bar{
+    background-color:white;
+}
+
+.navbar-nav > li > a {
+	color:#ffffff;
+    /*padding:0;
+    margin:0;*/
+ }   
+
+.navbar-brand{
+	color:#ffffff;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+    color:#A9A9A9;
+    background-color:#008B8B;
+}
+
+/* Colocando imagens em cada menu */
+
+/* Imagem 1 */
+.menuitem1{    
+    background: url('../img/img-menu/img-1a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+ }   
+
+.navAlt li:hover .menuitem1{ 
+    background: url('../img/img-menu/img-1b.png') no-repeat;
+}
+/* --------------- */
+
+/* Imagem 2 */
+.menuitem2{    
+    background: url('../img/img-menu/img-2a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+
+.navAlt li:hover .menuitem2{ 
+    background: url('../img/img-menu/img-2b.png') no-repeat;
+}
+
+/* --------------- */
+
+/* Imagem 3 */
+.menuitem3{    
+    background: url('../img/img-menu/img-3a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem3{ 
+    background: url('../img/img-menu/img-3b.png') no-repeat;
+}
+
+/* --------------- */
+
+/* Imagem 4 */
+.menuitem4{    
+    background: url('../img/img-menu/img-4a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem4{ 
+    background: url('../img/img-menu/img-4b.png') no-repeat;
+}
+
+/* --------------- */
+
+/* Imagem 5 */
+.menuitem5{    
+    background: url('../img/img-menu/img-5a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem5{ 
+    background: url('../img/img-menu/img-5b.png') no-repeat;
+}
+
+/* --------------- */
+
+/* Imagem 6 */
+.menuitem6{    
+    background: url('../img/img-menu/img-6a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem6{ 
+    background: url('../img/img-menu/img-6b.png') no-repeat;
+}
+
+/* --------------- */
+
+/* Imagem 7 */
+.menuitem7{    
+    background: url('../img/img-menu/img-7a.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem7{ 
+    background: url('../img/img-menu/img-7b.png') no-repeat;
+}
+
+/* --------------- */
+
+
+/* Aumentar e Diminuir TEXTO */
+
+.right-tamanho-fonte {
+    display: inline;
+    float: right;
+    padding-right: 4px;
+}
+
+
+
+/* Aumentar */
+.menuitem8{    
+    background: url('../img/img-menu/fonte-aumenta1.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem8{ 
+    background: url('../img/img-menu/fonte-aumenta2.png') no-repeat;
+}
+
+/* Normal */
+.menuitem9{    
+    background: url('../img/img-menu/fonte-normal1.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem9{ 
+    background: url('../img/img-menu/fonte-normal2.png') no-repeat;
+}
+
+
+/* Diminuir */
+.menuitem10{    
+    background: url('../img/img-menu/fonte-diminui1.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+.navAlt li:hover .menuitem10{ 
+    background: url('../img/img-menu/fonte-diminui2.png') no-repeat;
+}
+
+
+
+/* --------------- */
+
+/* Mapa Site */
+.menuitem11{    
+    background: url('../img/mapasite1.png') no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    /*position: fixed;*/
+}
+
+li:hover .menuitem11{ 
+    background: url('../img/mapasite2.png') no-repeat;
+}
+
+/*-- Ajustando as redes sociais no footer --*/
+
+.socials-left {
+    display: inline;
+    float: left;
+    padding-right: 4px;
+}
+
+.socials-right {
+    display: inline;
+    float: right;
+    padding-right: 4px;
+    
+
+}
+
+.socials-right span{
+    display: block;
+    float: right;
+    width: 32px;
+    height: 32px;
+    text-indent: -4000px;
+}
+
+.socials-right .facebook {
+    background: url(../img/img-footer/social-1a.png) no-repeat;
+    width: 32px;
+    height: 32px;
+   
+}
+.socials-right .facebook:hover {
+    background: url(../img/img-footer/social-1b.png) no-repeat;
+}
+
+.socials-right .whatsapp {
+    background: url(../img/img-footer/social-2a.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.socials-right .whatsapp:hover {
+    background: url(../img/img-footer/social-2b.png) no-repeat;
+}
+
+.socials-right .twitter {
+    background: url(../img/img-footer/social-3a.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}
+.socials-right .twitter:hover {
+    background: url(../img/img-footer/social-3b.png) no-repeat;
+}
+
+
+.socials-right .youtube {
+    background: url(../img/img-footer/social-4a.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.socials-right .youtube:hover {
+    background: url(../img/img-footer/social-4b.png) no-repeat;
+}
+
+.socials-right .instagram {
+    background: url(../img/img-footer/social-5a.png) no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.socials-right .instagram:hover {
+    background: url(../img/img-footer/social-5b.png) no-repeat;
+}
+
+
+
+
+
+/* Classe que é chamada pelo Javascript para fixar o menu */
+.menu-fixo {
+		position: fixed;/* Fixando o menu */
+		top: 0;
+		z-index: 99;
+        opacity:0.65;
+	    -moz-opacity: 0.65;
+	    filter: alpha(opacity=65);
+}
+
+.menu-fixo:hover{
+        opacity:0.95;
+	    -moz-opacity: 0.95;
+	    filter: alpha(opacity=95);    
+}
+
+#menuHeader{
+		background:#008B8B;
+		width:100%;
+		/*padding:0;*/
+		/*margin-top: 0;*/
+}
+
+/* Fim Configuração Menu ---------- */		
+
+/* Back To Top */
+
+.back-to-top{
+				width: 64px;
+				height: 64px;
+				display: block;
+				background: url('../img/arrow.png') no-repeat;
+				position: fixed;
+				bottom:75px;
+				right: 20px;
+				z-index: 99;
+                opacity:0.45;
+	           -moz-opacity: 0.45;
+	           filter: alpha(opacity=45);
+		
+}
+
+.back-to-top:hover{
+		cursor: pointer;
+		background: url('../img/arrow.png') no-repeat;
+        opacity:0.85;
+	    -moz-opacity: 0.85;
+	    filter: alpha(opacity=85);
+}
