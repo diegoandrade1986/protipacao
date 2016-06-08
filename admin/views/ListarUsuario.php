@@ -71,9 +71,9 @@ $dadosUsuario = $usuarioService->fetchAll();
                             <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" value="<?php echo $d['email']; ?>" disabled>
                         </div>
                         <div class="col-sm-3">
-                            <a href="" class="btn btn-default">Editar</a>
+                            <a href="" class="btn btn-success btn-sm">Editar</a>
                             <?php if ($_SESSION['nivel'] == '3'){?>
-                                <a href="<?php echo $d['usuario_id']; ?>" class="btn btn-danger" name="conf-exc">Excluir</a>
+                                <a href="<?php echo $d['usuario_id']; ?>" class="btn btn-danger btn-sm" name="conf-exc">Excluir</a>
                             <?php } ?>
                         </div>
                     </div>
