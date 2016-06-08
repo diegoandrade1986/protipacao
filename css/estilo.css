@@ -654,3 +654,11 @@ Link
     font-size: 20px;
     font-family: "BebasNeueRegular", Arial, sans-serif;
 }
+
+/* =========================================================
+Busca
+============================================================ */
+
+.search{
+    padding-top: 12px;
+}

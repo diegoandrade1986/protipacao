@@ -142,4 +142,17 @@ class NoticiaMapper
         }
 
     }
+
+    public function fetchSearch($search)
+    {
+        try {
+            $result = $this->conexao->prepare("SELECT * FROM tb_noticia WHERE titulo like :busca  ORDER BY noticia_id DESC  ");
+            $result->bindValue(":busca", "%$search%", PDO::PARAM_STR);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_OBJ);
+        }catch(PDOException $e){
+            echo "Erro ao listar para busca " . $e->getMessage();
+            return false;
+        }
+    }
 }

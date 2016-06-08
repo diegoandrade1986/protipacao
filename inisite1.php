@@ -32,7 +32,8 @@ date_default_timezone_set('America/Sao_Paulo');
     <!-- estilo.css -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="css/adipoli.css" type="text/css" media="screen" />
-	
+    <link href="css/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     
       
 </head>

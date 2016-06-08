@@ -156,8 +156,28 @@ class NoticiaService
         return false;
     }
 
+    public function fetchSearch($search)
+    {
+        if (trim($search) != ""){
+            return $this->noticiaMapper->fetchSearch($search);
+        }
+    }
+
     public function limitaString($string,$qtd)
     {
-        return substr(strip_tags($string),0,$qtd);
+        return self::before_last(" ",substr(strip_tags($string),0,$qtd));
     }
+
+    public function before_last ($this_, $inthat)    {
+        return substr($inthat, 0, self::strrevpos($inthat, $this_));
+    }
+
+
+    public function strrevpos($instr, $needle)
+    {
+        $rev_pos = strpos (strrev($instr), strrev($needle));
+        if ($rev_pos===false) return false;
+        else return strlen($instr) - $rev_pos - strlen($needle);
+    }
+
 }
