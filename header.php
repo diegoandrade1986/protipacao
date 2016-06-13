@@ -2,7 +2,7 @@
             <div class="clearfix">
                 
                     <div id="logo-image">
-                        <a href="index.html"><img class="responsive-img" src="img/logo.png" alt="" /></a>
+                        <a href="index.php"><img class="responsive-img" src="img/logo.png" alt="" /></a>
                     </div><!--logo-image-->
                 
                 
