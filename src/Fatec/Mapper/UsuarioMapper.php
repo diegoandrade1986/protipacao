@@ -33,6 +33,55 @@ class UsuarioMapper
         return false;
     }
 
+    public function update(Usuario $usuario)
+    {
+        try{
+            $result = $this->conexao->prepare("UPDATE usuario set nome = :nome, senha = :senha, username = :username,
+                                                email = :email , nivel = :nivel
+                                                Where usuario_id = :id");
+            $result->bindValue(":id",$usuario->getUsuarioid(),PDO::PARAM_INT);
+            $result->bindValue(":nome",$usuario->getNome(),PDO::PARAM_STR);
+            $result->bindValue(":senha",$usuario->getSenha(),PDO::PARAM_STR);
+            $result->bindValue(":username",$usuario->getUsername(),PDO::PARAM_STR);
+            $result->bindValue(":email",$usuario->getEmail(),PDO::PARAM_STR);
+            $result->bindValue(":nivel",$usuario->getNivel(),PDO::PARAM_STR);
+            $result->execute();
+            if($result->rowCount() == 1) {
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            //var_dump($dados);
+            echo "Erro ao Atualizar " . $e->getMessage();
+        }
+        return false;
+    }
+
+    public function updateSemSenha(Usuario $usuario)
+    {
+        try{
+            $result = $this->conexao->prepare("UPDATE usuario set nome = :nome, username = :username,
+                                                email = :email , nivel = :nivel
+                                                Where usuario_id = :id");
+            $result->bindValue(":id",$usuario->getUsuarioid(),PDO::PARAM_INT);
+            $result->bindValue(":nome",$usuario->getNome(),PDO::PARAM_STR);
+            $result->bindValue(":username",$usuario->getUsername(),PDO::PARAM_STR);
+            $result->bindValue(":email",$usuario->getEmail(),PDO::PARAM_STR);
+            $result->bindValue(":nivel",$usuario->getNivel(),PDO::PARAM_STR);
+            $result->execute();
+            if($result->rowCount() == 1) {
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            //var_dump($dados);
+            echo "Erro ao Atualizar " . $e->getMessage();
+        }
+        return false;
+    }
+
     public function fetchAll(){
         try {
             $result = $this->conexao->prepare("SELECT * FROM usuario");
@@ -46,12 +95,12 @@ class UsuarioMapper
 
     public function fetch($id){
         try {
-            $result = $this->conexao->prepare("SELECT * FROM tabela_preco WHERE tabela_preco_id = :id");
-            $result->bindValue(":id", $id, \PDO::PARAM_INT);
+            $result = $this->conexao->prepare("SELECT * FROM usuario WHERE usuario_id = :id");
+            $result->bindValue(":id", $id, PDO::PARAM_INT);
             $result->execute();
-            return $result->fetch(\PDO::FETCH_OBJ);
+            return $result->fetch(PDO::FETCH_OBJ);
         }catch(\PDOException $e){
-            echo "Erro ao listar Tabela " . $e->getMessage();
+            echo "Erro ao listar Usuário " . $e->getMessage();
             return false;
         }
 

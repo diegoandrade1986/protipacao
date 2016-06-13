@@ -521,3 +521,7 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+.btn-final {
+    margin-left: 10px;
+}

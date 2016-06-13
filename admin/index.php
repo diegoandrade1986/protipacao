@@ -12,9 +12,10 @@ if (isset($_GET['pg']))
         6 => 'ListarNoticias.php',
         7 => 'CadUsuario.php',
         8 => 'ListarUsuario.php',
-        9 => 'UpdateNoticias.php'
+        9 => 'UpdateNoticias.php',
+        10 => 'UpdateUsuario.php'
     ];
-    if ((int)$_GET['pg'] > 0 && (int)$_GET['pg'] <= 9){
+    if ((int)$_GET['pg'] > 0 && (int)$_GET['pg'] <= 10){
         foreach ($pg as $p => $value) {
             if ($p == $_GET['pg']) $pgIncluir = "views/".$value;
         }
@@ -174,7 +175,7 @@ else
     <script src="js/noticia.js"></script>
 <?php } ?>
 
-<?php if ($_GET['pg'] == 7 || $_GET['pg'] == 8) { ?>
+<?php if ($_GET['pg'] == 7 || $_GET['pg'] == 8 || $_GET['pg'] == 10) { ?>
 <script src="js/usuario.js"></script>
 <?php } ?>
 

@@ -32,6 +32,28 @@ class UsuarioService
 
     }
 
+    public function update(array $dados)
+    {
+        if (trim($dados['nome']) != "" && trim($dados['senha']) != "" && (int)$dados['usuarioid'] > 0 && $dados['username'] != ""){
+            $this->usuario->setUsuarioid((int)$dados['usuarioid']);
+            $this->usuario->setNome($dados['nome']);
+            $this->usuario->setSenha(md5($dados['senha']));
+            $this->usuario->setUsername($dados['username']);
+            $this->usuario->setEmail($dados['email']);
+            $this->usuario->setNivel($dados['nivel']);
+            $dadosUsuario = self::fetch((int)$dados['usuarioid']);
+            if($dadosUsuario->senha == $dados['senha']){
+                $update = $this->usuarioMapper->updateSemSenha($this->usuario);
+            }else{
+                $update = $this->usuarioMapper->update($this->usuario);
+            }
+            return $update;
+        }else{
+            return false;
+        }
+    }
+
+
     public function fetchAll()
     {
         return $this->usuarioMapper->fetchAll();
@@ -55,8 +77,8 @@ class UsuarioService
     }
     public function fetch($id)
     {
-        if ((int)$id) {
-            $result = $this->tabelaMapper->fetch($id);
+        if ((int)$id > 0) {
+            $result = $this->usuarioMapper->fetch($id);
             return $result;
         }
         return [

@@ -40,13 +40,13 @@ $dadosUsuario = $usuarioService->fetchAll();
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="index.php">Home</a></li>
-            <li class="active">Listar Usuarios</li>
+            <li class="active">Listar Usuários</li>
         </ol>
     </div>
 
 
         <div class="box box-info">
-            <h3 class="box-title">Listar Usuarios</h3>
+            <h3 class="box-title">Listar Usuários</h3>
             <!-- ALTERAR TABELA POSTERIORMENTE PARA RESPONSIVA -->
             <?php
             $params = array(
@@ -71,7 +71,7 @@ $dadosUsuario = $usuarioService->fetchAll();
                             <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" value="<?php echo $d['email']; ?>" disabled>
                         </div>
                         <div class="col-sm-3">
-                            <a href="" class="btn btn-default">Editar</a>
+                            <a href="<?php echo "index.php?pg=10&usuario=" . $d['usuario_id']?>" class="btn btn-default btn-success">Editar</a>
                             <?php if ($_SESSION['nivel'] == '3'){?>
                                 <a href="<?php echo $d['usuario_id']; ?>" class="btn btn-danger" name="conf-exc">Excluir</a>
                             <?php } ?>
