@@ -9,6 +9,20 @@ class NoticiaMapper
         $this->conexao = Conexao::getConexao();
     }
 
+    public function fetchIndex(Noticia $noticia)
+    {
+        try {
+            $result = $this->conexao->prepare("SELECT * FROM tb_noticia WHERE categoria_id = :id ORDER BY noticia_id desc limit 2 ");
+            $result->bindValue(":id", $noticia->getCategoriaId(), PDO::PARAM_INT);
+            $result->execute();
+            return $result->fetchAll(PDO::FETCH_OBJ);
+        }catch(PDOException $e){
+            echo "Erro ao listar para o index " . $e->getMessage();
+            return false;
+        }
+
+    }
+
     public function insert(Noticia $noticia)
     {
         try{

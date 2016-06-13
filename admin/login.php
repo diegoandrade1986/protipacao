@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     <input type="password" class="form-control" name="senha" placeholder="Senha" required>
                     <button class="btn btn-lg btn-primary btn-block" type="submit" name="logar" id="logar">
                         Logar</button>
-                    <!--<a href="#" class="pull-right need-help">Recuperar Senha </a><span class="clearfix"></span>-->
+                    <p><a href="/" class="pull-right need-help">Retornar ao site</a><span class="clearfix"></span></p>
                 </form>
                 <?php
                 if (isset($_POST['logar'])){

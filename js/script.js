@@ -46,9 +46,11 @@ $(function(){
 	});
 });
 
+
+
 //Menu Fixo no Topo
 	$(function(){   
-		var nav = $('#menuHeader');   
+		var nav = $('#meuMenu');   
 		$(window).scroll(function () { 
             if ($(this).scrollTop() > 180){ 
 				nav.addClass("menu-fixo"); 
@@ -59,13 +61,3 @@ $(function(){
 	});
 
 
-var offset = $('#meuMenu').offset().top;
-var $meuMenu = $('#meuMenu');
-$(document).on('scroll', function () {
-    if (offset <= $(window).scrollTop()) {
-        $meuMenu.addClass('fixar');
-    } else {
-        $meuMenu.removeClass('fixar');
-    }
-});
-	

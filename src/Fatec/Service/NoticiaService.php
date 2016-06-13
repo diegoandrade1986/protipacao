@@ -16,15 +16,15 @@ class NoticiaService
         $this->noticiaMapper = $noticiaMapper;
     }
 
-/*    public function fetchByName($nome)
+    public function fetchIndex($categoriaid)
     {
-        if (trim($nome) != "") {
-            $this->categoria->setCategoriaNome($nome);
-            return $this->categoriaMapper->fetchByName($this->categoria);
+        if (trim($categoriaid) > 0) {
+            $this->noticia->setCategoriaId($categoriaid);
+            return $this->noticiaMapper->fetchIndex($this->noticia);
         }
         return false;
 
-    }*/
+    }
 
     public function fetch($id){
         if ((int)$id > 0){
@@ -129,7 +129,7 @@ class NoticiaService
             if ($dadosNoticia){
                 $params = array(
                     "mode" => 'Jumping', // MODO DAS PÁGINAS
-                    "perPage" => 9, // REGISTROS POR PÁGINA
+                    "perPage" => 5, // REGISTROS POR PÁGINA
                     "delta" =>5, // NUMOS DE LINKS
                     'itemData' => $dadosNoticia
                 );
@@ -161,6 +161,7 @@ class NoticiaService
         if (trim($search) != ""){
             return $this->noticiaMapper->fetchSearch($search);
         }
+        return false;
     }
 
     public function limitaString($string,$qtd)

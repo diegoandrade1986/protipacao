@@ -1,7 +1,7 @@
 <?php
-include 'inisite1.php';
-include 'header.php';
-include 'nav.php';
+include "pag-html-abre.php";
+include "header.php";
+include "nav.php";
 require_once __DIR__.'/src/Fatec/Entity/Noticia.php';
 require_once __DIR__.'/src/Fatec/Mapper/NoticiaMapper.php';
 require_once __DIR__.'/src/Fatec/Service/NoticiaService.php';
@@ -53,5 +53,5 @@ $dadoscategoria = $categoriaService->fetch($dados->categoria_id);
     </div>
 </div>
 <?php
-    include 'inisite2.php';
+    include 'pag-html-fecha.php';
 ?>
