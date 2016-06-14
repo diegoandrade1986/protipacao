@@ -352,3 +352,37 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+@media only screen and (max-width: 479px) {
+
+    .navbar-brand {
+        font-size: 14px;
+        height: 120px;
+    }
+    .navbar-right {
+        font-size: 12px;
+        float: left;
+        position: absolute;
+        top:4px;
+        right: 2px;
+
+    }
+
+    .navbar-toggle{
+        float: left;
+        position: absolute;
+        top:50px;
+        left: 45%;
+    }
+
+    .btn-primary {
+        margin-left: 0px;
+        float: left;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .btn-final p {
+        font-size: 12px;
+    }
+}

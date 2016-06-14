@@ -41,6 +41,7 @@ $dadoscategoria = $categoriaService->fetch($dados->categoria_id);
 	</div>
 	 <div class="col-sm-3">
         <h3>Outras Notícias</h3>
+        <hr>
         <section>
             <?php foreach ($noticiasRelacionadas as $nr) { ?>
                 <a href="noticias.php?noticia=<?php echo $nr->noticia_id ?>">

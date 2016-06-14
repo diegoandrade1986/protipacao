@@ -70,12 +70,10 @@ if (isset($_POST['cadastrarUsuario'])){
             <p>Obs:. <b><span class="text-danger">*</span></b> Campos Obrigatórios</p>
             </p>
             <p class="col-md-12">
-            <div class="col-md-2">
-                <button type="submit" name="cadastrarUsuario" class="btn btn-default btn-primary pull-right">Cadastrar</button>
-            </div>
-            <div class="col-md-2">
-                <a href="index.php?pg=8" class="btn btn-default btn-danger pull-right">Cancelar</a>
-            </div>
+                <div class="col-xs-6 col-sm-6">
+                    <button type="submit" name="cadastrarUsuario" class="btn btn-default btn-primary">Cadastrar</button>
+                    <a href="index.php?pg=8" class="btn btn-default btn-danger">Cancelar</a>
+                </div>
             </p>
         </div>
         <div class="col-sm-12">

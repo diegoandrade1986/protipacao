@@ -105,11 +105,9 @@ if (isset($_POST['alterarUsuario'])){
                 <p>Obs:. <b><span class="text-danger">*</span></b> Campos Obrigatórios</p>
             </p>
             <p class="col-md-12">
-                <div class="col-md-1">
-                    <button type="submit" id="alterarUsuario" name="alterarUsuario" class="btn btn-default btn-primary pull-right">Salvar</button>
-                </div>
-                <div class="col-md-1">
-                    <a href="index.php?pg=8" class="btn btn-default btn-danger pull-right">Cancelar</a>
+                <div class="col-xs-6 col-sm-6 btn-group-sm">
+                    <button type="submit" id="alterarUsuario" name="alterarUsuario" class="btn btn-default btn-primary">Salvar</button>
+                    <a href="index.php?pg=8" class="btn btn-default btn-danger">Cancelar</a>
                 </div>
             </p>
         </div>
